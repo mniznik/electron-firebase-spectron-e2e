@@ -1,0 +1,86 @@
+{
+  "name": "electronSpectronApp",
+  "productName": "electronSpectronApp",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start -- %NODE_DEBUG_OPTION%",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --cache --color --ext .jsx,.js src",
+    "admin": "node admin-app/index.js",
+    "e2e": "jest test/e2e.spec.js",
+    "compile": "browserify -t [ babelify --presets [ react es2015 ] ] src/app.js -o build/app.js",
+    "server-e2e": "npm-run-all -p -r admin \"e2e\""
+  },
+  "keywords": [],
+  "author": "mniznik",
+  "license": "MNI",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "electronSpectronApp"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "electronSpectronApp"
+      }
+    }
+  },
+  "dependencies": {
+    "babel-jest": "^23.0.0-alpha.0",
+    "electron-compile": "^6.4.2",
+    "electron-devtools-installer": "^2.2.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "firebase": "^4.11.0",
+    "jest": "^22.4.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-hot-loader": "^3.1.3",
+    "request-promise": "^4.2.2",
+    "spectron": "^3.8.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "concurrently": "^3.5.1",
+    "electron": "^1.8.4",
+    "electron-forge": "^5.1.1",
+    "electron-prebuilt-compile": "1.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.7.0",
+    "npm-run-all": "^4.1.2",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "firebaseAdminApp",
+  "productName": "firebaseAdminApp",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "bmitmanski",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "firebase-admin": "^5.10.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  }
+}
